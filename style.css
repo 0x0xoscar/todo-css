@@ -1,0 +1,201 @@
+body {
+  background: linear-gradient(#fec5c5, #834848);
+  background-repeat: no-repeat;
+  height: 100vh;
+  text-align: center;
+}
+
+#container {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: 19px auto;
+  width: 427px;
+  min-height: 180px;
+  background-color: white;
+  animation: slideDown 0.6s cubic-bezier(0.25, 0.1, 0.25, 1.5) forwards;
+}
+
+#headerText,
+#todoInput,
+#todoBtn,
+#todoUl,
+#completedText {
+  opacity: 0;
+}
+
+#headerText {
+  animation: fadeIn 0.6s forwards;
+  animation-delay: 0.6s;
+}
+
+#completedText {
+  animation: fadeIn 0.6s forwards;
+  animation-delay: 1s;
+}
+
+#todoInput {
+  animation: fadeIn 0.6s forwards;
+  animation-delay: 1.2s;
+}
+
+#todoBtn {
+  animation: fadeIn 0.6s forwards;
+  animation-delay: 1.4s;
+}
+
+#todoUl {
+  animation: fadeIn 0.6s forwards;
+  animation-delay: 1.6s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#todoUl {
+  list-style-type: none;
+}
+
+.todoItem {
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#todoBtn {
+  height: 32px;
+  width: 49px;
+  font-weight: bold;
+}
+
+#todoInput {
+  margin-top: 20px;
+  width: 223px;
+  height: 27px;
+  border: 1px solid #9e9e9e;
+  outline: none;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#todoInput:focus {
+  border: 2px solid #205ba6;
+  background-color: white;
+}
+
+#headerText {
+  padding-top: 10px;
+  font-size: 46px;
+  margin-bottom: 7px;
+}
+
+#completedText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+#todoElements {
+  margin-top: -3px;
+}
+
+#todoUl {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+}
+
+.deleteBtn {
+  border: none;
+  background-color: white;
+}
+
+.errorMsg {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ab0c0d;
+  font-style: italic;
+  font-size: 14px;
+  animation-name: blink;
+  animation-duration: 0.6s;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.todoText {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.todoText:hover {
+  text-decoration: line-through;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+li:last-of-type {
+  padding-bottom: 30px;
+}
+
+.completed {
+  color: #7a7a7a;
+  text-decoration: line-through;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+#inputDiv,
+#todoUl,
+#completedText {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.errorMsg {
+  display: none;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ab0c0d;
+  font-style: italic;
+  font-size: 14px;
+}
